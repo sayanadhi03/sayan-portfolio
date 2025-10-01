@@ -1,9 +1,15 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import SplitText from "./SplitText";
+import { motion } from "framer-motion";
 
 export function HeroSection() {
-  const titles = ["FULL STACK DEVELOPER", "AGENTIC AI ENGINEER"];
+  const titles = [
+    "FULL STACK DEVELOPER",
+    "FRONTEND ENGINEER",
+    "AGENTIC AI ENGINEER",
+  ];
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -11,7 +17,7 @@ export function HeroSection() {
   useEffect(() => {
     const currentTitle = titles[currentTitleIndex];
     const typingSpeed = isDeleting ? 50 : 100;
-    const pauseTime = isDeleting ? 500 : 2000;
+    const pauseTime = isDeleting ? 200 : 1000;
 
     const timer = setTimeout(() => {
       if (!isDeleting && displayedText === currentTitle) {
@@ -65,45 +71,113 @@ export function HeroSection() {
           <div className="space-y-8">
             {/* Main Heading */}
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl mb-1 font-bold text-white leading-tight">
-                Hey, I'm
-              </h1>
-              <h1 className="text-5xl lg:text-7xl font-bold text-orange-500 leading-tight">
-                Sayan
-              </h1>
+              <motion.h1
+                className="text-5xl text-white lg:text-7xl font-bold leading-tight"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                {"Hey, I'm Sayan".split("").map((char, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.05,
+                      ease: "easeOut",
+                    }}
+                    style={{
+                      display: char === " " ? "inline" : "inline-block",
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+              </motion.h1>
             </div>
 
             {/* Location */}
-            <div className="flex items-center space-x-2 text-orange-500">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <motion.div
+              className="flex items-center space-x-2 text-orange-500"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+            >
+              <motion.svg
+                className="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.4, duration: 0.4, ease: "backOut" }}
+              >
                 <path
                   fillRule="evenodd"
                   d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
                   clipRule="evenodd"
                 />
-              </svg>
-              <span className="text-lg">West Bengal, India</span>
-            </div>
+              </motion.svg>
+              <span className="text-lg text-orange-500">
+                {"West Bengal, India".split("").map((char, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: 0.7 + index * 0.025,
+                      ease: "easeOut",
+                    }}
+                    style={{
+                      display: char === " " ? "inline" : "inline-block",
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+              </span>
+            </motion.div>
 
-            {/* Title */}
-            <div className="space-y-2">
+            {/* Animated Title */}
+            <motion.div
+              className="space-y-2"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
+            >
               <h2 className="text-2xl lg:text-3xl font-bold text-white tracking-wider min-h-[3rem] flex items-center">
                 {displayedText}
                 <span className="animate-pulse ml-1 text-orange-500">|</span>
               </h2>
-            </div>
+            </motion.div>
 
             {/* Social Icons and Resume Button */}
-            <div className="flex items-center space-x-6 pt-8">
+            <motion.div
+              className="flex items-center space-x-6 pt-8"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.7, ease: "easeOut" }}
+            >
               {/* Social Icons */}
-              <div className="flex space-x-4">
+              <motion.div
+                className="flex space-x-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.0, duration: 0.5 }}
+              >
                 {/* GitHub */}
-                <a
+                <motion.a
                   href="https://github.com/sayanadhi03"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
                   aria-label="GitHub"
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ delay: 1.1, duration: 0.5, ease: "backOut" }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <svg
                     className="w-6 h-6 text-white"
@@ -112,15 +186,20 @@ export function HeroSection() {
                   >
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                   </svg>
-                </a>
+                </motion.a>
 
                 {/* LinkedIn */}
-                <a
+                <motion.a
                   href="https://www.linkedin.com/in/sayan-adhikary03/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
                   aria-label="LinkedIn"
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ delay: 1.2, duration: 0.5, ease: "backOut" }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <svg
                     className="w-6 h-6 text-white"
@@ -129,44 +208,232 @@ export function HeroSection() {
                   >
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                   </svg>
-                </a>
-              </div>
+                </motion.a>
+              </motion.div>
 
               {/* Resume Button */}
-              <a
+              <motion.a
                 href="https://drive.google.com/file/d/1rFUztRWi1Qol9hcYU0YyBQq5jltDIktb/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center space-x-2"
+                className="text-white bg-gray-800 hover:bg-gray-700 px-8 py-3 rounded-full font-semibold transition-colors flex items-center space-x-2"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 1.3, duration: 0.6, ease: "backOut" }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                <motion.span
+                  className="w-2 h-2 bg-green-500 rounded-full"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ repeat: Infinity, duration: 2, delay: 2.0 }}
+                />
                 <span>Resume</span>
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
           </div>
 
           {/* Right Content - Profile Image */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Profile image */}
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-orange-500 to-red-600 p-2 overflow-hidden">
-                <div className="w-full h-full rounded-full overflow-hidden">
-                  <Image
-                    src="/portfolio image.jpg"
-                    alt="Sayan Adhikary Profile Picture"
-                    width={400}
-                    height={400}
-                    className="w-full h-full object-cover"
-                    priority
-                  />
-                </div>
-              </div>
+          <motion.div
+            className="flex justify-center lg:justify-end"
+            initial={{ opacity: 0, scale: 0.5, x: 100 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.8, ease: "backOut" }}
+          >
+            <motion.div
+              className="relative"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              {/* Main container with multiple layers */}
+              <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+                {/* Outer glow ring */}
+                <motion.div
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    background:
+                      "conic-gradient(from 0deg, #ff6b35, #f7931e, #ffd700, #ff6b35)",
+                    padding: "4px",
+                  }}
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 8,
+                    ease: "linear",
+                    delay: 1.5,
+                  }}
+                >
+                  <div className="w-full h-full rounded-full bg-black" />
+                </motion.div>
 
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-orange-500 rounded-full"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-red-500 rounded-full"></div>
-            </div>
-          </div>
+                {/* Glass morphism border */}
+                <motion.div
+                  className="absolute inset-2 rounded-full backdrop-blur-sm border border-white/20"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))",
+                    boxShadow:
+                      "inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 25px 50px rgba(0, 0, 0, 0.5)",
+                  }}
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.4, duration: 0.6, ease: "backOut" }}
+                />
+
+                {/* Professional shadow base */}
+                <motion.div
+                  className="absolute inset-4 rounded-full bg-gradient-to-br from-orange-500/20 to-red-600/20 blur-xl"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
+                />
+
+                {/* Main image container */}
+                <motion.div
+                  className="absolute inset-6 rounded-full overflow-hidden"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #ff6b35, #f7931e, #ff8c42)",
+                    padding: "3px",
+                    boxShadow:
+                      "0 20px 60px rgba(255, 107, 53, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)",
+                  }}
+                  initial={{ rotate: -10, scale: 0 }}
+                  animate={{ rotate: 0, scale: 1 }}
+                  transition={{ delay: 0.5, duration: 0.8, ease: "backOut" }}
+                  whileHover={{
+                    boxShadow:
+                      "0 30px 80px rgba(255, 107, 53, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4)",
+                    y: -8,
+                  }}
+                >
+                  <motion.div
+                    className="w-full h-full rounded-full overflow-hidden relative"
+                    style={{
+                      boxShadow: "inset 0 0 20px rgba(0, 0, 0, 0.2)",
+                    }}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.7, duration: 0.6, ease: "backOut" }}
+                  >
+                    <Image
+                      src="/portfolio image.jpg"
+                      alt="Sayan Adhikary Profile Picture"
+                      width={400}
+                      height={400}
+                      className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                      priority
+                    />
+                    {/* Overlay gradient for depth */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/5 rounded-full" />
+                  </motion.div>
+                </motion.div>
+
+                {/* Floating particles */}
+                <motion.div
+                  className="absolute -top-2 -right-2 w-3 h-3 bg-orange-400 rounded-full opacity-80"
+                  animate={{
+                    y: [0, -20, 0],
+                    x: [0, 10, 0],
+                    scale: [1, 1.2, 1],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 4,
+                    delay: 2,
+                    ease: "easeInOut",
+                  }}
+                />
+
+                <motion.div
+                  className="absolute -bottom-3 -left-3 w-4 h-4 bg-red-400 rounded-full opacity-70"
+                  animate={{
+                    y: [0, 15, 0],
+                    x: [0, -8, 0],
+                    scale: [1, 0.8, 1],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 5,
+                    delay: 2.5,
+                    ease: "easeInOut",
+                  }}
+                />
+
+                <motion.div
+                  className="absolute top-1/4 -left-4 w-2 h-2 bg-yellow-400 rounded-full opacity-60"
+                  animate={{
+                    y: [0, -10, 0],
+                    x: [0, -5, 0],
+                    opacity: [0.6, 1, 0.6],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 3.5,
+                    delay: 3,
+                    ease: "easeInOut",
+                  }}
+                />
+
+                {/* Professional skill indicators */}
+                <motion.div
+                  className="absolute -top-6 left-1/2 transform -translate-x-1/2"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.8, duration: 0.6 }}
+                >
+                  <div className="flex space-x-1">
+                    {[...Array(3)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="w-2 h-2 bg-orange-400 rounded-full"
+                        animate={{ scale: [1, 1.3, 1] }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 2,
+                          delay: i * 0.2 + 2,
+                        }}
+                      />
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* Tech stack indicator */}
+                <motion.div
+                  className="absolute -bottom-8 left-1/2 transform -translate-x-1/2"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2, duration: 0.6 }}
+                >
+                  <div className="flex items-center space-x-2 bg-black/40 backdrop-blur-sm rounded-full px-4 py-2 border border-orange-500/30">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-xs text-orange-300 font-medium">
+                      Available
+                    </span>
+                  </div>
+                </motion.div>
+
+                {/* Orbiting elements */}
+                <motion.div
+                  className="absolute inset-0 pointer-events-none"
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 15,
+                    ease: "linear",
+                    delay: 2,
+                  }}
+                >
+                  <div className="relative w-full h-full">
+                    <div className="absolute -top-3 left-1/2 w-1.5 h-1.5 bg-blue-400 rounded-full opacity-70" />
+                    <div className="absolute top-1/2 -right-3 w-1 h-1 bg-purple-400 rounded-full opacity-60" />
+                    <div className="absolute -bottom-3 left-1/2 w-2 h-2 bg-green-400 rounded-full opacity-50" />
+                    <div className="absolute top-1/2 -left-3 w-1.5 h-1.5 bg-pink-400 rounded-full opacity-65" />
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 

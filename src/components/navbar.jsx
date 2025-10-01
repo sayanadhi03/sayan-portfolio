@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { cn } from "@/lib/utils";
 import {
   Navbar,
   NavBody,
@@ -17,9 +18,10 @@ export function ResponsiveNavbar() {
   const navItems = [
     { name: "Home", link: "#home" },
     { name: "About", link: "#about" },
+    { name: "Education", link: "#education" },
     { name: "Skills", link: "#skills" },
     { name: "Projects", link: "#projects" },
-    { name: "Contact Me", link: "#contact" },
+    { name: "Contact", link: "#contact" },
   ];
 
   return (
@@ -27,19 +29,23 @@ export function ResponsiveNavbar() {
       {/* Desktop Navigation */}
       <NavBody>
         {/* Logo/Name Section */}
-        <div className="flex items-center space-x-2">
-          <span className="text-xl font-bold text-black dark:text-white">
+        <div className="flex items-center space-x-2 z-30 relative flex-shrink-0 min-w-fit">
+          <span className="text-sm lg:text-lg font-bold text-black dark:text-white whitespace-nowrap">
             SAYAN ADHIKARY
           </span>
         </div>
 
-        {/* Navigation Items */}
-        <NavItems items={navItems} />
+        {/* Navigation Items - Centered */}
+        <div className="flex-1 flex justify-center items-center min-w-fit">
+          <NavItems items={navItems} />
+        </div>
 
         {/* CTA Button */}
-        <NavbarButton href="#contact" variant="dark">
-          Let's Talk
-        </NavbarButton>
+        <div className="z-30 relative flex-shrink-0 min-w-fit">
+          <NavbarButton href="#contact" variant="dark">
+            Let's Talk
+          </NavbarButton>
+        </div>
       </NavBody>
 
       {/* Mobile Navigation */}
