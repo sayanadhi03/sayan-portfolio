@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import ContactForm from "@/components/ContactForm";
 import { ResponsiveNavbar } from "@/components/navbar";
 import { HeroSection } from "@/components/hero-section";
 import LogoLoop from "@/components/LogoLoop";
@@ -675,7 +676,7 @@ export default function Home() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Let's{" "}
+                Let&apos;s{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
                   Connect
                 </span>
@@ -776,49 +777,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-sm rounded-xl p-8 border border-gray-700/30"
               >
-                <form className="space-y-6">
-                  <div>
-                    <label className="block text-white font-medium mb-2">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500/50 transition-colors"
-                      placeholder="Your name"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-medium mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500/50 transition-colors"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-medium mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      rows={5}
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500/50 transition-colors resize-none"
-                      placeholder="Tell me about your project..."
-                    />
-                  </div>
-
-                  <motion.button
-                    type="submit"
-                    className="w-full py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white font-semibold rounded-lg hover:from-orange-600 hover:to-red-700 transition-all duration-300"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Send Message
-                  </motion.button>
-                </form>
+                <ContactForm />
               </motion.div>
             </div>
           </div>

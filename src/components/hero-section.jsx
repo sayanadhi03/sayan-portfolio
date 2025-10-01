@@ -77,7 +77,7 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                {"Hey, I'm Sayan".split("").map((char, index) => (
+                {"Hey, I'm ".split("").map((char, index) => (
                   <motion.span
                     key={index}
                     initial={{ opacity: 0, y: 50 }}
@@ -92,6 +92,31 @@ export function HeroSection() {
                     }}
                   >
                     {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+                {"Sayan".split("").map((char, index) => (
+                  <motion.span
+                    key={index + 10}
+                    initial={{ opacity: 0, y: 50, scale: 0.8 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{
+                      duration: 0.8,
+                      delay: (index + 10) * 0.08,
+                      ease: "easeOut",
+                    }}
+                    whileHover={{
+                      scale: 1.1,
+                      textShadow: "0 0 20px rgba(255, 107, 53, 0.8)",
+                      transition: { duration: 0.3 },
+                    }}
+                    className="text-transparent bg-clip-text bg-gradient-to-br from-orange-400 via-red-500 to-pink-600 drop-shadow-2xl"
+                    style={{
+                      display: "inline-block",
+                      filter: "drop-shadow(0 0 10px rgba(255, 107, 53, 0.4))",
+                      textShadow: "0 0 30px rgba(255, 107, 53, 0.5)",
+                    }}
+                  >
+                    {char}
                   </motion.span>
                 ))}
               </motion.h1>
