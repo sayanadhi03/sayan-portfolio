@@ -5,6 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import { ResponsiveNavbar } from "@/components/navbar";
 import { HeroSection } from "@/components/hero-section";
 import LogoLoop from "@/components/LogoLoop";
+import ProjectCircularGallery from "@/components/ProjectCircularGallery";
 import { motion } from "framer-motion";
 import {
   IconCode,
@@ -34,10 +35,60 @@ import {
   IconTrophy,
   IconApi,
   IconFlask,
+  IconBrandRedux,
+  IconChartBar,
+  IconChartLine,
+  IconTerminal,
+  IconBrandNextjs,
+  IconDatabase as IconPostgreSQL,
+  IconBrandSocketIo,
+  IconBrandDocker,
+  IconBrandStripe,
+  IconServer,
+  IconWorldWww,
+  IconBolt,
 } from "@tabler/icons-react";
 import { Highlighter } from "@/components/ui/highlighter";
 
 export default function Home() {
+  // Function to get tech icon and color
+  const getTechIconAndColor = (tech) => {
+    const techMap = {
+      React: { icon: IconBrandReact, color: "text-cyan-400" },
+      "Next.js": { icon: IconBrandNextjs, color: "text-white" },
+      "Node.js": { icon: IconBrandNodejs, color: "text-green-500" },
+      JavaScript: { icon: IconBrandJavascript, color: "text-yellow-400" },
+      TypeScript: { icon: IconBrandTypescript, color: "text-blue-500" },
+      Python: { icon: IconBrandPython, color: "text-blue-400" },
+      "Tailwind CSS": { icon: IconBrandTailwind, color: "text-cyan-400" },
+      MongoDB: { icon: IconBrandMongodb, color: "text-green-500" },
+      PostgreSQL: { icon: IconPostgreSQL, color: "text-blue-600" },
+      Firebase: { icon: IconBrandFirebase, color: "text-yellow-500" },
+      "Redux Toolkit": { icon: IconBrandRedux, color: "text-purple-500" },
+      "Chart.js": { icon: IconChartBar, color: "text-pink-400" },
+      RapidAPI: { icon: IconApi, color: "text-blue-400" },
+      "Socket.io": { icon: IconBrandSocketIo, color: "text-white" },
+      Prisma: { icon: IconDatabase, color: "text-gray-300" },
+      Flask: { icon: IconFlask, color: "text-gray-300" },
+      TensorFlow: { icon: IconBolt, color: "text-orange-500" },
+      "TensorFlow.js": { icon: IconBolt, color: "text-orange-400" },
+      Docker: { icon: IconBrandDocker, color: "text-blue-400" },
+      Express: { icon: IconServer, color: "text-gray-300" },
+      Stripe: { icon: IconBrandStripe, color: "text-indigo-500" },
+      JWT: { icon: IconWorldWww, color: "text-gray-400" },
+      OpenAI: { icon: IconBolt, color: "text-green-400" },
+      "Framer Motion": { icon: IconBolt, color: "text-pink-500" },
+      Pandas: { icon: IconChartBar, color: "text-blue-400" },
+      Matplotlib: { icon: IconChartLine, color: "text-green-400" },
+      argparse: { icon: IconTerminal, color: "text-gray-400" },
+      Streamlit: { icon: IconBolt, color: "text-red-500" },
+      LangChain: { icon: IconBolt, color: "text-green-500" },
+      Ollama: { icon: IconBolt, color: "text-purple-500" },
+    };
+
+    return techMap[tech] || { icon: IconCode, color: "text-gray-400" };
+  };
+
   const skills = [
     { name: "Frontend Development", icon: IconBrandReact, level: 90 },
     { name: "Backend Development", icon: IconBrandNodejs, level: 85 },
@@ -187,30 +238,56 @@ export default function Home() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Crypto Verse – Digital Assets Hub",
       description:
-        "Full-stack e-commerce solution with React, Node.js, and MongoDB",
-      image: "/portfolio image.jpg", // Replace with actual project images
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      github: "#",
-      live: "#",
+        "• Built a cryptocurrency tracking platform that consolidated live prices, market stats, and news into one dashboard, reducing information lookup time by 40%. • Integrated CoinRanking API & News API via RapidAPI, improving data accuracy and enabling real-time updates within 2s latency. • Optimized state management with Redux Toolkit, cutting redundant API calls by 30% and boosting app responsiveness.",
+      image: "/Screenshot 2025-10-01 232803.png", // Updated to use the actual uploaded image filename
+      tech: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "Chart.js",
+        "RapidAPI",
+      ],
+      github: "https://github.com/sayanadhi03/Crypto-Verse",
+      live: "https://crypto-verse-kappa.vercel.app/",
     },
     {
-      title: "Task Management App",
+      title: "AI Thief Detection System",
       description:
-        "Collaborative project management tool with real-time updates",
-      image: "/portfolio image.jpg", // Replace with actual project images
-      tech: ["Next.js", "Socket.io", "PostgreSQL", "Prisma"],
-      github: "#",
-      live: "#",
+        "• Built a real-time object detection security system using TensorFlow.js (COCO-SSD) for browser-based AI inference. • Implemented person detection with bounding boxes and audio alerts, running entirely on the client-side for privacy. • Integrated React Webcam and Canvas API for live monitoring, achieving detection updates every 100ms.",
+      image: "/Screenshot 2025-10-02 094800.png", // Using the uploaded AI Thief Detection image
+      tech: ["Next.js", "TensorFlow.js", "React", "Tailwind CSS"],
+      github: "https://github.com/sayanadhi03/AI-Thief-Detector",
+      live: "https://ai-thief-detector-gamma.vercel.app/",
     },
     {
-      title: "AI Content Generator",
-      description: "Machine learning powered content creation platform",
-      image: "/portfolio image.jpg", // Replace with actual project images
-      tech: ["Python", "TensorFlow", "Flask", "React"],
-      github: "#",
-      live: "#",
+      title: "Weather App 🌤️",
+      description:
+        "• Built a modern weather application providing real-time weather data, 5-day forecasts, and AQI information for cities worldwide. • Integrated Air Quality Index with health insights and multi-city weather tracking for comprehensive environmental monitoring. • Developed dark mode UI with smooth Framer Motion animations and temperature toggle (Celsius/Fahrenheit) for enhanced user experience.",
+      image: "/Screenshot 2025-10-02 102734.png", // Updated to use the new Weather App screenshot
+      tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+      github: "https://github.com/sayanadhi03/weather-app",
+      live: "https://weather-app-eight-livid-25.vercel.app/",
+    },
+    {
+      title: "Data Analyzer CLI Tool",
+      description:
+        "• Engineered a modular CLI tool to automate data cleaning, analysis, and visualization for CSV/Excel datasets up to 1M+ rows, cutting manual analysis time by 70%. • Designed 12+ analytical features including summary stats, filtering, groupby, correlation heatmaps, and multi-type charts (bar/line/hist/pie), improving data insights 3× faster. • Automated report exports (CSV, PNG, consolidated PDF), boosting reporting efficiency by 60% for repetitive workflows.",
+      image: "/Screenshot 2025-09-11 112027.png", // Updated to use the Data Analyzer CLI Tool screenshot
+      tech: ["Python", "Pandas", "Matplotlib", "argparse"],
+      github: "https://github.com/sayanadhi03/data-anlyzer",
+      live: "https://github.com/sayanadhi03/data-anlyzer",
+    },
+    {
+      title: "LangChain Demo with Llama3.2",
+      description:
+        "• Built a local AI-powered chatbot integrating LangChain with Ollama's LLaMA 3.2 model for conversational AI capabilities. • Implemented conversational memory, prompt chaining, and context-aware responses for enhanced user interactions. • Deployed as a lightweight local application using Streamlit, demonstrating practical LLM integration and deployment strategies.",
+      image: "/Screenshot 2025-10-02 121538.png", // Updated to use the LangChain Demo screenshot
+      tech: ["Streamlit", "LangChain", "Ollama"],
+      github: "https://github.com/sayanadhi03/Agentic-AI",
+      live: "https://github.com/sayanadhi03/Agentic-AI",
     },
   ];
 
@@ -599,67 +676,11 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <div className="grid lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <motion.div
-                  key={project.title}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/30 group hover:border-orange-500/30 transition-all duration-300"
-                  whileHover={{ y: -10 }}
-                >
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      width={400}
-                      height={250}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  </div>
-
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-white mb-3">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-300 mb-4 leading-relaxed">
-                      {project.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-orange-500/20 text-orange-300 rounded-full text-sm"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="flex gap-4">
-                      <a
-                        href={project.github}
-                        className="flex items-center gap-2 text-gray-300 hover:text-orange-400 transition-colors"
-                      >
-                        <IconBrandGithub size={20} />
-                        <span>Code</span>
-                      </a>
-                      <a
-                        href={project.live}
-                        className="flex items-center gap-2 text-gray-300 hover:text-orange-400 transition-colors"
-                      >
-                        <IconExternalLink size={20} />
-                        <span>Live Demo</span>
-                      </a>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            {/* Circular Gallery Projects */}
+            <ProjectCircularGallery
+              projects={projects}
+              getTechIconAndColor={getTechIconAndColor}
+            />
           </div>
         </section>
 
