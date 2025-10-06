@@ -27,7 +27,7 @@ export const metadata = {
     siteName: "Sayan Adhikary Portfolio",
     images: [
       {
-        url: "/portfolio image.jpg",
+        url: "/profile-icon.png",
         width: 1200,
         height: 630,
         alt: "Sayan Adhikary - Full-Stack Developer",
@@ -41,41 +41,12 @@ export const metadata = {
     title: "Sayan Adhikary - Full-Stack Developer",
     description:
       "Full-Stack Developer & Software Engineer - Creating innovative digital solutions with modern web technologies",
-    images: ["/portfolio image.jpg"],
+    images: ["/profile-icon.png"],
   },
   icons: {
-    icon: [
-      {
-        url: "/portfolio image.jpg",
-        sizes: "32x32",
-        type: "image/jpeg",
-      },
-      {
-        url: "/portfolio image.jpg",
-        sizes: "16x16",
-        type: "image/jpeg",
-      },
-    ],
-    shortcut: "/portfolio image.jpg",
-    apple: {
-      url: "/portfolio image.jpg",
-      sizes: "180x180",
-      type: "image/jpeg",
-    },
-    other: [
-      {
-        rel: "icon",
-        url: "/portfolio image.jpg",
-        sizes: "192x192",
-        type: "image/jpeg",
-      },
-      {
-        rel: "icon",
-        url: "/portfolio image.jpg",
-        sizes: "512x512",
-        type: "image/jpeg",
-      },
-    ],
+    icon: "/profile-icon.png",
+    shortcut: "/profile-icon.png",
+    apple: "/profile-icon.png",
   },
   manifest: "/manifest.json",
 };

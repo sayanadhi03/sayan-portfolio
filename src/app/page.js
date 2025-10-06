@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import { ResponsiveNavbar } from "@/components/navbar";
 import { HeroSection } from "@/components/hero-section";
 import LogoLoop from "@/components/LogoLoop";
-import ProjectCircularGallery from "@/components/ProjectCircularGallery";
+import { ProjectFollowingPointer } from "@/components/ProjectFollowingPointer";
 import { motion } from "framer-motion";
 import {
   IconCode,
@@ -650,7 +650,7 @@ export default function Home() {
         <section id="projects" className="py-20 px-4 relative">
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900" />
 
-          <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="container mx-auto max-w-7xl relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -659,25 +659,28 @@ export default function Home() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Featured{" "}
+                Interactive{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
-                  Projects
+                  Project Showcase
                 </span>
               </h2>
-              <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                A showcase of my{" "}
+              <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-4">
+                Explore my{" "}
                 <Highlighter action="underline" color="#FF9800">
-                  recent work
+                  portfolio projects
                 </Highlighter>{" "}
-                and{" "}
+                with interactive{" "}
                 <Highlighter action="highlight" color="#87CEFA">
-                  creative solutions
+                  following pointer effects
                 </Highlighter>
+              </p>
+              <p className="text-gray-400 text-sm">
+                Hover over any card to experience the magic ✨
               </p>
             </motion.div>
 
-            {/* Circular Gallery Projects */}
-            <ProjectCircularGallery
+            {/* Following Pointer Projects */}
+            <ProjectFollowingPointer
               projects={projects}
               getTechIconAndColor={getTechIconAndColor}
             />
