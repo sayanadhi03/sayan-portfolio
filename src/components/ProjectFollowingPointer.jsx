@@ -282,12 +282,20 @@ export function ProjectFollowingPointer({ projects, getTechIconAndColor }) {
   };
 
   return (
-    <div className="w-full" id="projects-section">
+    <motion.div
+      className="w-full"
+      id="projects-section"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       {/* Pagination Stats */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
         className="text-center mb-8"
       >
         <p className="text-gray-400 text-sm">
@@ -297,14 +305,34 @@ export function ProjectFollowingPointer({ projects, getTechIconAndColor }) {
       </motion.div>
 
       {/* Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto min-h-[600px]">
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto min-h-[600px]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
         {currentProjects.map((project, index) => (
           <motion.div
             key={`${currentPage}-${index}`}
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
+            initial={{ opacity: 0, y: 80, scale: 0.8, rotateX: 15 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
+            animate={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
             exit={{ opacity: 0, y: -50, scale: 0.9 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.15,
+              ease: "easeOut",
+              type: "spring",
+              stiffness: 100,
+              damping: 15,
+            }}
+            viewport={{ once: true }}
+            whileHover={{
+              y: -5,
+              scale: 1.02,
+              transition: { duration: 0.2 },
+            }}
           >
             <ProjectCard
               project={project}
@@ -313,7 +341,7 @@ export function ProjectFollowingPointer({ projects, getTechIconAndColor }) {
             />
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Pagination Controls */}
       {totalPages > 1 && (
@@ -408,6 +436,6 @@ export function ProjectFollowingPointer({ projects, getTechIconAndColor }) {
         imageSrc={selectedImage}
         projectTitle={selectedTitle}
       />
-    </div>
+    </motion.div>
   );
 }

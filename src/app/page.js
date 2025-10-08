@@ -680,10 +680,17 @@ export default function Home() {
             </motion.div>
 
             {/* Following Pointer Projects */}
-            <ProjectFollowingPointer
-              projects={projects}
-              getTechIconAndColor={getTechIconAndColor}
-            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <ProjectFollowingPointer
+                projects={projects}
+                getTechIconAndColor={getTechIconAndColor}
+              />
+            </motion.div>
           </div>
         </section>
 
