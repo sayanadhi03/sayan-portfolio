@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sayan Portfolio
 
-## Getting Started
+> A modern, interactive portfolio built with Next.js, React, and Framer Motion.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- **Animated Navbar**: Cinematic entrance animation, responsive, and branded.
+- **Project Showcase**: Paginated, animated cards with interactive pointer effects and image popups.
+- **Comprehensive Scroll Animations**: Smooth section transitions using Framer Motion.
+- **Tech Stack Display**: Full tech stack for each project, with icons and color highlights.
+- **Image Modal System**: Click-to-expand project screenshots in fullscreen.
+- **Dark Theme**: Consistent dark UI with orange accent colors.
+- **Mobile Responsive**: Optimized for all devices.
+- **Custom Favicon & Metadata**: Profile photo as favicon and social preview.
+- **Contact Section**: Animated contact form and social links.
+
+## 🛠️ Tech Stack
+
+- [Next.js](https://nextjs.org/) (App Router)
+- [React](https://react.dev/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Aceternity UI](https://ui.aceternity.com/) (navbar)
+- [Tabler Icons](https://tabler-icons.io/)
+
+## 📦 Getting Started
+
+Clone the repo and install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🖼️ Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Edit `src/app/page.js` to update sections and content.
+- Add projects in `src/components/ProjectFollowingPointer.jsx`.
+- Update navbar in `src/components/navbar.jsx`.
+- Change profile photo in `public/profile-icon.png`.
 
-## Learn More
+## 🌐 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Deploy easily on [Vercel](https://vercel.com/) or any platform supporting Next.js.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
