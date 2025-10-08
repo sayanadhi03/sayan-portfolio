@@ -132,7 +132,7 @@ const ProjectCard = ({ project, getTechIconAndColor, onImageClick }) => {
         }
       >
         <motion.div
-          className="group relative h-full overflow-hidden rounded-2xl border border-gray-700/50 bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-md transition duration-300 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500/50"
+          className="group relative h-full overflow-hidden rounded-xl sm:rounded-2xl border border-gray-700/50 bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-md transition duration-300 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500/50"
           whileHover={{ y: -8, rotateX: 5 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
@@ -306,7 +306,7 @@ export function ProjectFollowingPointer({ projects, getTechIconAndColor }) {
 
       {/* Grid Layout */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto min-h-[600px]"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto min-h-[400px] sm:min-h-[600px] px-4 sm:px-0"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.4 }}

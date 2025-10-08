@@ -101,135 +101,165 @@ export default function Home() {
   const skillLogos = [
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconBrandReact className="text-cyan-400" size={32} />
-          <span className="text-white font-semibold">React</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconBrandReact className="text-cyan-400" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            React
+          </span>
         </div>
       ),
       alt: "React",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconBrandMongodb className="text-green-500" size={32} />
-          <span className="text-white font-semibold">MongoDB</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconBrandMongodb className="text-green-500" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            MongoDB
+          </span>
         </div>
       ),
       alt: "MongoDB",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconBrandHtml5 className="text-orange-500" size={32} />
-          <span className="text-white font-semibold">HTML</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconBrandHtml5 className="text-orange-500" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            HTML
+          </span>
         </div>
       ),
       alt: "HTML",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconBrandCss3 className="text-blue-500" size={32} />
-          <span className="text-white font-semibold">CSS</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconBrandCss3 className="text-blue-500" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            CSS
+          </span>
         </div>
       ),
       alt: "CSS",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconBrandTailwind className="text-teal-400" size={32} />
-          <span className="text-white font-semibold">Tailwind CSS</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconBrandTailwind className="text-teal-400" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            Tailwind CSS
+          </span>
         </div>
       ),
       alt: "Tailwind CSS",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconBrandNodejs className="text-green-600" size={32} />
-          <span className="text-white font-semibold">Node.js</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconBrandNodejs className="text-green-600" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            Node.js
+          </span>
         </div>
       ),
       alt: "Node.js",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconCode className="text-gray-400" size={32} />
-          <span className="text-white font-semibold">Express.js</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconCode className="text-gray-400" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            Express.js
+          </span>
         </div>
       ),
       alt: "Express.js",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconApi className="text-orange-400" size={32} />
-          <span className="text-white font-semibold">Postman</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconApi className="text-orange-400" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            Postman
+          </span>
         </div>
       ),
       alt: "Postman",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconBrandFirebase className="text-yellow-500" size={32} />
-          <span className="text-white font-semibold">Firebase</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconBrandFirebase className="text-yellow-500" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            Firebase
+          </span>
         </div>
       ),
       alt: "Firebase",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconBrandPython className="text-blue-400" size={32} />
-          <span className="text-white font-semibold">Python</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconBrandPython className="text-blue-400" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            Python
+          </span>
         </div>
       ),
       alt: "Python",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconFlask className="text-gray-300" size={32} />
-          <span className="text-white font-semibold">Flask</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconFlask className="text-gray-300" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            Flask
+          </span>
         </div>
       ),
       alt: "Flask",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconBrandJavascript className="text-yellow-400" size={32} />
-          <span className="text-white font-semibold">JavaScript</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconBrandJavascript className="text-yellow-400" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            JavaScript
+          </span>
         </div>
       ),
       alt: "JavaScript",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconBrandTypescript className="text-blue-600" size={32} />
-          <span className="text-white font-semibold">TypeScript</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconBrandTypescript className="text-blue-600" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            TypeScript
+          </span>
         </div>
       ),
       alt: "TypeScript",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconBrandGithub className="text-white" size={32} />
-          <span className="text-white font-semibold">GitHub</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconBrandGithub className="text-white" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            GitHub
+          </span>
         </div>
       ),
       alt: "GitHub",
     },
     {
       node: (
-        <div className="flex items-center gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-700/30">
-          <IconBrandGit className="text-red-500" size={32} />
-          <span className="text-white font-semibold">Git</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
+          <IconBrandGit className="text-red-500" size={24} />
+          <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
+            Git
+          </span>
         </div>
       ),
       alt: "Git",
@@ -349,15 +379,15 @@ export default function Home() {
               <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto rounded-full" />
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="space-y-6"
+                className="space-y-4 sm:space-y-6"
               >
-                <h3 className="text-2xl md:text-3xl font-semibold text-white">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
                   Passionate Full-Stack Developer
                 </h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
@@ -397,7 +427,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="grid grid-cols-2 gap-6"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
               >
                 {[
                   { number: "10+", label: "Projects Completed" },
@@ -406,14 +436,16 @@ export default function Home() {
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
-                    className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-xl p-6 text-center border border-gray-700/30"
+                    className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center border border-gray-700/30"
                     whileHover={{ scale: 1.05, y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <h4 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
+                    <h4 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
                       {stat.number}
                     </h4>
-                    <p className="text-gray-300 mt-2">{stat.label}</p>
+                    <p className="text-gray-300 mt-2 text-sm sm:text-base">
+                      {stat.label}
+                    </p>
                   </motion.div>
                 ))}
               </motion.div>
@@ -464,24 +496,27 @@ export default function Home() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  className={`flex flex-col lg:flex-row gap-8 items-center ${
+                  className={`flex flex-col lg:flex-row gap-6 lg:gap-8 items-center ${
                     index % 2 === 1 ? "lg:flex-row-reverse" : ""
                   }`}
                 >
                   {/* Education Card */}
                   <div className="flex-1">
                     <motion.div
-                      className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/30 hover:border-orange-500/30 transition-all duration-300 group"
+                      className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/30 hover:border-orange-500/30 transition-all duration-300 group"
                       whileHover={{ y: -10, scale: 1.02 }}
                     >
-                      <div className="flex items-start gap-6">
-                        <div className="p-4 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-xl">
-                          <edu.icon size={32} className="text-orange-400" />
+                      <div className="flex items-start gap-4 sm:gap-6">
+                        <div className="p-3 sm:p-4 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-xl">
+                          <edu.icon
+                            size={28}
+                            className="text-orange-400 sm:w-8 sm:h-8"
+                          />
                         </div>
 
                         <div className="flex-1">
                           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
-                            <h3 className="text-xl lg:text-2xl font-bold text-white group-hover:text-orange-400 transition-colors">
+                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white group-hover:text-orange-400 transition-colors">
                               {edu.degree}
                             </h3>
                             <div className="flex items-center gap-2 text-orange-400 mt-2 lg:mt-0">
@@ -492,10 +527,10 @@ export default function Home() {
 
                           <div className="space-y-3 mb-6">
                             <div className="flex flex-col lg:flex-row lg:items-center gap-2">
-                              <h4 className="text-lg font-semibold text-gray-200">
+                              <h4 className="text-base sm:text-lg font-semibold text-gray-200">
                                 {edu.institution}
                               </h4>
-                              <span className="text-gray-400">
+                              <span className="text-sm sm:text-base text-gray-400">
                                 • {edu.location}
                               </span>
                             </div>
@@ -605,21 +640,40 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="mb-16"
+              className="mb-12 sm:mb-16"
             >
-              <LogoLoop
-                logos={skillLogos}
-                speed={60}
-                direction="left"
-                logoHeight={60}
-                gap={48}
-                pauseOnHover={true}
-                fadeOut={true}
-                fadeOutColor="rgba(0, 0, 0, 1)"
-                scaleOnHover={true}
-                ariaLabel="Technical skills"
-                className="py-8"
-              />
+              {/* Mobile version */}
+              <div className="block sm:hidden">
+                <LogoLoop
+                  logos={skillLogos}
+                  speed={40}
+                  direction="left"
+                  logoHeight={40}
+                  gap={24}
+                  pauseOnHover={true}
+                  fadeOut={true}
+                  fadeOutColor="rgba(0, 0, 0, 1)"
+                  scaleOnHover={true}
+                  ariaLabel="Technical skills"
+                  className="py-4"
+                />
+              </div>
+              {/* Desktop version */}
+              <div className="hidden sm:block">
+                <LogoLoop
+                  logos={skillLogos}
+                  speed={60}
+                  direction="left"
+                  logoHeight={60}
+                  gap={48}
+                  pauseOnHover={true}
+                  fadeOut={true}
+                  fadeOutColor="rgba(0, 0, 0, 1)"
+                  scaleOnHover={true}
+                  ariaLabel="Technical skills"
+                  className="py-8"
+                />
+              </div>
             </motion.div>
 
             {/* Reverse Direction Skills Loop */}
@@ -629,19 +683,38 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <LogoLoop
-                logos={skillLogos.slice().reverse()}
-                speed={45}
-                direction="right"
-                logoHeight={50}
-                gap={40}
-                pauseOnHover={true}
-                fadeOut={true}
-                fadeOutColor="rgba(0, 0, 0, 1)"
-                scaleOnHover={true}
-                ariaLabel="Technical skills reverse"
-                className="py-6 opacity-75"
-              />
+              {/* Mobile version */}
+              <div className="block sm:hidden">
+                <LogoLoop
+                  logos={skillLogos.slice().reverse()}
+                  speed={30}
+                  direction="right"
+                  logoHeight={35}
+                  gap={20}
+                  pauseOnHover={true}
+                  fadeOut={true}
+                  fadeOutColor="rgba(0, 0, 0, 1)"
+                  scaleOnHover={true}
+                  ariaLabel="Technical skills reverse"
+                  className="py-3 opacity-75"
+                />
+              </div>
+              {/* Desktop version */}
+              <div className="hidden sm:block">
+                <LogoLoop
+                  logos={skillLogos.slice().reverse()}
+                  speed={45}
+                  direction="right"
+                  logoHeight={50}
+                  gap={40}
+                  pauseOnHover={true}
+                  fadeOut={true}
+                  fadeOutColor="rgba(0, 0, 0, 1)"
+                  scaleOnHover={true}
+                  ariaLabel="Technical skills reverse"
+                  className="py-6 opacity-75"
+                />
+              </div>
             </motion.div>
           </div>
         </section>
@@ -724,26 +797,31 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="space-y-8"
+                className="space-y-6 sm:space-y-8"
               >
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-6">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white mb-6">
                     Get in Touch
                   </h3>
                   <div className="space-y-4">
-                    <div className="flex items-center gap-4 text-gray-300">
-                      <div className="p-3 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-lg">
-                        <IconMail size={20} className="text-orange-400" />
+                    <div className="flex items-center gap-3 sm:gap-4 text-gray-300">
+                      <div className="p-2 sm:p-3 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-lg">
+                        <IconMail
+                          size={18}
+                          className="text-orange-400 sm:w-5 sm:h-5"
+                        />
                       </div>
                       <div>
-                        <p className="font-medium">Email</p>
-                        <p className="text-orange-400">
+                        <p className="font-medium text-sm sm:text-base">
+                          Email
+                        </p>
+                        <p className="text-orange-400 text-sm sm:text-base break-all">
                           sayanadhikary003@gmail.com
                         </p>
                       </div>

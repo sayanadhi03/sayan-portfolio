@@ -12,10 +12,11 @@ export function ResponsiveNavbar() {
 }
 
 function Navbar({ className }) {
+  const [menuOpen, setMenuOpen] = React.useState(false);
   return (
     <motion.div
       className={cn(
-        "fixed top-10 inset-x-0 max-w-6xl mx-auto z-50 dark",
+        "fixed top-4 inset-x-0 max-w-6xl mx-auto z-50 dark",
         className
       )}
       initial={{ opacity: 0, y: -100, scale: 0.9 }}
@@ -29,14 +30,14 @@ function Navbar({ className }) {
       }}
     >
       <motion.div
-        className="flex items-center justify-between bg-black/80 backdrop-blur-md rounded-full border border-gray-700/50 shadow-2xl px-8 py-3"
+        className="flex items-center justify-between bg-black/80 backdrop-blur-md rounded-full border border-gray-700/50 shadow-2xl px-4 py-2 md:px-8 md:py-3"
         initial={{ backdropFilter: "blur(0px)" }}
         animate={{ backdropFilter: "blur(12px)" }}
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         {/* Brand Name on the left */}
         <motion.div
-          className="text-white font-bold text-xl"
+          className="text-white font-bold text-lg md:text-xl"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -44,9 +45,30 @@ function Navbar({ className }) {
           SAYAN ADHIKARY
         </motion.div>
 
-        {/* Navigation Menu in the center */}
+        {/* Hamburger for mobile */}
+        <button
+          className="md:hidden text-white focus:outline-none ml-2"
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label="Toggle menu"
+        >
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+            <path
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        {/* Navigation Menu */}
         <motion.div
-          className="flex items-center space-x-8"
+          className={
+            menuOpen
+              ? "absolute top-16 left-0 w-full flex flex-col items-center bg-black/95 rounded-b-2xl py-4 space-y-4 md:static md:flex-row md:space-x-8 md:space-y-0 md:bg-transparent md:rounded-none md:py-0"
+              : "hidden md:flex items-center space-x-8"
+          }
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -56,7 +78,7 @@ function Navbar({ className }) {
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-white hover:text-orange-400 transition-colors cursor-pointer"
+                className="text-white hover:text-orange-400 transition-colors cursor-pointer text-lg md:text-base"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
@@ -64,6 +86,7 @@ function Navbar({ className }) {
                   scale: 1.1,
                   transition: { duration: 0.2 },
                 }}
+                onClick={() => setMenuOpen(false)}
               >
                 {item}
               </motion.a>
@@ -78,6 +101,7 @@ function Navbar({ className }) {
           transition={{ duration: 0.6, delay: 0.8 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          className="hidden md:block"
         >
           <a
             href="#contact"
@@ -87,6 +111,18 @@ function Navbar({ className }) {
           </a>
         </motion.div>
       </motion.div>
+      {/* Mobile Let's Talk button */}
+      {menuOpen && (
+        <div className="md:hidden w-full flex justify-center pb-4">
+          <a
+            href="#contact"
+            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition-colors font-medium"
+            onClick={() => setMenuOpen(false)}
+          >
+            Let's Talk
+          </a>
+        </div>
+      )}
     </motion.div>
   );
 }
