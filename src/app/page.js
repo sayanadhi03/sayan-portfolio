@@ -101,8 +101,11 @@ export default function Home() {
   const skillLogos = [
     {
       node: (
-        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
-          <IconBrandReact className="text-cyan-400" size={24} />
+        <div className="flex items-center gap-2 sm:gap-3 glass-effect px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-cyan-400/30 glow-box group hover:border-cyan-400/50 transition-all duration-300">
+          <IconBrandReact
+            className="text-cyan-400 glow-text group-hover:scale-110 transition-transform duration-300"
+            size={24}
+          />
           <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
             React
           </span>
@@ -112,8 +115,11 @@ export default function Home() {
     },
     {
       node: (
-        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
-          <IconBrandMongodb className="text-green-500" size={24} />
+        <div className="flex items-center gap-2 sm:gap-3 glass-effect px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-green-500/30 glow-box group hover:border-green-500/50 transition-all duration-300">
+          <IconBrandMongodb
+            className="text-green-500 glow-text group-hover:scale-110 transition-transform duration-300"
+            size={24}
+          />
           <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
             MongoDB
           </span>
@@ -222,8 +228,11 @@ export default function Home() {
     },
     {
       node: (
-        <div className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-700/30">
-          <IconBrandJavascript className="text-yellow-400" size={24} />
+        <div className="flex items-center gap-2 sm:gap-3 glass-effect px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-yellow-400/30 glow-box group hover:border-yellow-400/50 transition-all duration-300">
+          <IconBrandJavascript
+            className="text-yellow-400 glow-text group-hover:scale-110 transition-transform duration-300"
+            size={24}
+          />
           <span className="text-white font-medium sm:font-semibold text-sm sm:text-base">
             JavaScript
           </span>
@@ -356,11 +365,26 @@ export default function Home() {
         <HeroSection />
 
         {/* About Section */}
-        <section id="about" className="py-20 px-4 relative overflow-hidden">
-          {/* Background Elements */}
+        <section
+          id="about"
+          className="py-20 px-4 relative overflow-hidden particles-container"
+        >
+          {/* Enhanced Background Elements */}
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(255,107,53,0.1),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(247,147,30,0.1),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(255,107,53,0.15),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(247,147,30,0.15),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,107,53,0.05),transparent_70%)]" />
+
+          {/* Floating Elements */}
+          <div className="absolute top-10 left-10 w-2 h-2 bg-orange-500/30 rounded-full blur-sm float-animation"></div>
+          <div
+            className="absolute top-32 right-20 w-3 h-3 bg-orange-400/20 rounded-full blur-sm float-animation"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute bottom-20 left-1/4 w-1 h-1 bg-orange-600/40 rounded-full blur-sm float-animation"
+            style={{ animationDelay: "3s" }}
+          ></div>
 
           <div className="container mx-auto max-w-6xl relative z-10">
             <motion.div

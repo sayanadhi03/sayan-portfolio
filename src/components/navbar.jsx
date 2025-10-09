@@ -30,10 +30,20 @@ function Navbar({ className }) {
       }}
     >
       <motion.div
-        className="flex items-center justify-between bg-black/80 backdrop-blur-md rounded-full border border-gray-700/50 shadow-2xl px-4 py-2 md:px-8 md:py-3"
-        initial={{ backdropFilter: "blur(0px)" }}
-        animate={{ backdropFilter: "blur(12px)" }}
+        className="flex items-center justify-between glass-effect rounded-full shadow-2xl px-4 py-2 md:px-8 md:py-3 glow-box"
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 26, 0.8) 50%, rgba(0, 0, 0, 0.9) 100%)",
+          border: "1px solid rgba(255, 107, 53, 0.2)",
+        }}
+        initial={{ backdropFilter: "blur(0px)", opacity: 0 }}
+        animate={{ backdropFilter: "blur(20px)", opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
+        whileHover={{
+          scale: 1.02,
+          boxShadow:
+            "0 0 40px rgba(255, 107, 53, 0.3), 0 0 80px rgba(255, 107, 53, 0.1)",
+        }}
       >
         {/* Brand Name on the left */}
         <motion.div
@@ -105,7 +115,7 @@ function Navbar({ className }) {
         >
           <a
             href="#contact"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition-colors font-medium"
+            className="btn-enhanced text-white px-6 py-2 rounded-full font-medium text-sm relative overflow-hidden"
           >
             Let's Talk
           </a>
@@ -116,7 +126,7 @@ function Navbar({ className }) {
         <div className="md:hidden w-full flex justify-center pb-4">
           <a
             href="#contact"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition-colors font-medium"
+            className="btn-enhanced text-white px-8 py-3 rounded-full font-medium text-sm relative overflow-hidden"
             onClick={() => setMenuOpen(false)}
           >
             Let's Talk

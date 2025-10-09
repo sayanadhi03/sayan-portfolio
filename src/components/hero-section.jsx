@@ -42,28 +42,50 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen bg-black relative overflow-hidden"
+      className="min-h-screen relative overflow-hidden particles-container"
       style={{
-        backgroundImage: `
-          linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-          radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.1) 1px, transparent 0)
+        background: `
+          linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #000000 50%, #0d0d0d 75%, #000000 100%),
+          radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(247, 147, 30, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0)
         `,
-        backgroundSize: "50px 50px",
+        backgroundSize: "100% 100%, 100% 100%, 100% 100%, 50px 50px",
       }}
     >
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Enhanced Visual Effects */}
+      <div className="absolute inset-0 opacity-30">
         <div
           className="absolute inset-0"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
+              linear-gradient(rgba(255, 107, 53, 0.05) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(247, 147, 30, 0.05) 1px, transparent 1px)
             `,
             backgroundSize: "50px 50px",
           }}
         />
       </div>
+
+      {/* Floating Orbs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-4 h-4 bg-orange-500/20 rounded-full blur-sm float-animation"></div>
+        <div
+          className="absolute top-40 right-20 w-6 h-6 bg-orange-400/15 rounded-full blur-sm float-animation"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute bottom-32 left-20 w-3 h-3 bg-orange-600/25 rounded-full blur-sm float-animation"
+          style={{ animationDelay: "4s" }}
+        ></div>
+        <div
+          className="absolute bottom-20 right-10 w-5 h-5 bg-orange-500/10 rounded-full blur-sm float-animation"
+          style={{ animationDelay: "6s" }}
+        ></div>
+      </div>
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-black/20 to-orange-900/10"></div>
 
       <div className="relative z-10 container mx-auto pt-10 p-25 flex items-center min-h-screen">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">

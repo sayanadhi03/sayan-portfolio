@@ -3,6 +3,181 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Modern attractive enhancements */
+:root {
+  --glow-primary: rgba(255, 107, 53, 0.4);
+  --glow-secondary: rgba(247, 147, 30, 0.3);
+  --gradient-1: linear-gradient(135deg, #ff6b35, #f7931e);
+  --gradient-2: linear-gradient(135deg, #667eea, #764ba2);
+  --gradient-3: linear-gradient(135deg, #f093fb, #f5576c);
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Animated background elements */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px var(--glow-primary);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--glow-primary), 0 0 60px var(--glow-secondary);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Glassmorphism effects */
+.glass-effect {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced glow effects */
+.glow-text {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor,
+    0 0 40px currentColor;
+}
+
+.glow-box {
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.3), 0 0 40px rgba(255, 107, 53, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glow-box:hover {
+  box-shadow: 0 0 30px rgba(255, 107, 53, 0.5), 0 0 60px rgba(255, 107, 53, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Animated gradients */
+.animated-gradient {
+  background: linear-gradient(270deg, #ff6b35, #f7931e, #ff6b35, #f7931e);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Modern card hover effects */
+.modern-card {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+}
+
+.modern-card:hover {
+  transform: translateY(-8px) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 107, 53, 0.2);
+}
+
+/* Floating elements */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Enhanced button styles */
+.btn-enhanced {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #ff6b35, #f7931e);
+  transition: all 0.3s ease;
+}
+
+.btn-enhanced::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-enhanced:hover::before {
+  left: 100%;
+}
+
+.btn-enhanced:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+}
+
+/* Magnetic effect for interactive elements */
+.magnetic {
+  transition: transform 0.2s ease-out;
+}
+
+/* Advanced text effects */
+.text-shimmer {
+  background: linear-gradient(90deg, #fff 0%, #ff6b35 50%, #fff 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Particle effect containers */
+.particles-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.particles-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+      2px 2px at 20px 30px,
+      rgba(255, 107, 53, 0.3),
+      transparent
+    ),
+    radial-gradient(2px 2px at 40px 70px, rgba(247, 147, 30, 0.3), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 107, 53, 0.4), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(247, 147, 30, 0.4), transparent);
+  background-size: 200px 100px;
+  animation: float 20s linear infinite;
+  pointer-events: none;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
