@@ -305,7 +305,7 @@ export default function Home() {
       title: "Weather App 🌤️",
       description:
         "• Built a modern weather application providing real-time weather data, 5-day forecasts, and AQI information for cities worldwide. • Integrated Air Quality Index with health insights and multi-city weather tracking for comprehensive environmental monitoring. • Developed dark mode UI with smooth Framer Motion animations and temperature toggle (Celsius/Fahrenheit) for enhanced user experience.",
-      image: "/Screenshot 2025-10-02 102734.png", // Updated to use the new Weather App screenshot
+      image: "/Screenshot 2025-10-14 220531.png", // Updated to use the new Weather App screenshot
       tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
       github: "https://github.com/sayanadhi03/weather-app",
       live: "https://weather-app-eight-livid-25.vercel.app/",
